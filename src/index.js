@@ -1,12 +1,9 @@
-import Vue from 'vue'
-import App from './app'
-import createRouter from './routers'
+import createApp from './create-app'
 
 import './test.css'
 
-const router = createRouter()
-new Vue({
-  router,
-  render: (h) => h(App),
-  el: '#root'
+const { router, app } = createApp()
+
+router.onReady(() => {
+  app.$mount('#root')
 })

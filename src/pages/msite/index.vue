@@ -1,5 +1,8 @@
 <script>
   export default {
+    metaInfo: {
+      title: 'msite'
+    },
     mounted () {
       console.log(11)
     }

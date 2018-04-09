@@ -1,5 +1,9 @@
 <script>
-
+  export default {
+    metaInfo: {
+      title: 'freedinner Page'
+    }
+  }
 </script>
 
 <template>

@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.js",
+    "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.server.js",
     "lint": "eslint --ext .js --ext .jsx --ext .vue src/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src/",
     "precommit": "npm run lint-fix",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.client.js",
     "dev:server": "cross-env NODE_ENV=development node server/index.js",
-    "start": "cross-env NODE_ENV=production node server/server.js"
+    "start": "cross-env NODE_ENV=production node server/index.js"
   },
   "author": "",
   "license": "ISC",

@@ -17,13 +17,15 @@ app.use(async (ctx, next) => {
     console.log(e)
   }
 })
+if (isDev) {
+  app.use(proxy({
+    host: 'http://localhost:8831/',
+    match: /^\/public\//
+  }))
+} else {
+  app.use(staticrouter.routes()).use(staticrouter.allowedMethods())
+}
 
-app.use(proxy({
-  host: 'http://localhost:8831/',
-  match: /^\/public\//
-}))
-
-app.use(staticrouter.routes()).use(staticrouter.allowedMethods())
 app.use(pageRouter.routes()).use(pageRouter.allowedMethods())
 
 app.listen(3000)
